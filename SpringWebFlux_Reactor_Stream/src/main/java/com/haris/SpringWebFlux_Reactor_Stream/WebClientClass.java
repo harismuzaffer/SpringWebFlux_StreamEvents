@@ -11,6 +11,7 @@ public class WebClientClass {
 	private WebClient client = WebClient.create("http://localhost:8080");
 
 	public void getResult() throws URISyntaxException {
+		
 		Flux<String> result = client
 			.get()
 			.uri("/check")

@@ -13,6 +13,7 @@ public class RouterClass {
 
 	@Bean
 	public RouterFunction<ServerResponse> routeExample (HandlerClass handler) {
+		
 		return RouterFunctions
 			.route(RequestPredicates.GET("/check").
 			and(RequestPredicates.accept(MediaType.TEXT_EVENT_STREAM)), handler::check);

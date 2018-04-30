@@ -7,6 +7,7 @@ import reactor.core.publisher.Flux;
 public class Service {
 	
 	Flux<String> getStringFlux(){
+		
 	    Flux<String> f = Flux
 	    	.fromStream(Stream.generate(() -> 
 	    	"Price of Gold: $" +

@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SpringWebFluxReactorStreamApplication {
 
 	public static void main(String[] args) throws URISyntaxException {
+		
 		SpringApplication.run(SpringWebFluxReactorStreamApplication.class, args);
 		
 		WebClientClass webclient = new WebClientClass();

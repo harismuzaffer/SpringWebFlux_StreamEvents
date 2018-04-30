@@ -15,6 +15,7 @@ import reactor.util.function.Tuple2;
 public class HandlerClass {
 
 	public Mono<ServerResponse> check(ServerRequest request) {
+		
 		Flux<Long> interval = Flux.interval(Duration.ofSeconds(1));
         interval.subscribe((i) -> i.intValue());
         Service s= new Service();
@@ -26,7 +27,6 @@ public class HandlerClass {
         	body(Flux.zip(interval, fString).
         	map(Tuple2::getT2), String.class);
         return response; 
-		
 	}
 	
 	
