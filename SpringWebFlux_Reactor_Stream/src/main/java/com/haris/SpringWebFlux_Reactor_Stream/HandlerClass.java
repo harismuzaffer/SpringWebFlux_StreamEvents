@@ -28,6 +28,4 @@ public class HandlerClass {
         	map(Tuple2::getT2), String.class);
         return response; 
 	}
-	
-	
 }
