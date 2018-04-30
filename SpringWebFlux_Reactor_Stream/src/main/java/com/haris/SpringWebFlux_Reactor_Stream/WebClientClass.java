@@ -19,6 +19,6 @@ public class WebClientClass {
 			.retrieve()
 			.bodyToFlux(String.class);
 		
-		result.subscribe(System.out::println);	
+		result.subscribe(System.out::println);
 	}
 }
