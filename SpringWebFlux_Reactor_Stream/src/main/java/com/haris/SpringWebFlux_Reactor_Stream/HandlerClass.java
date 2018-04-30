@@ -19,15 +19,13 @@ public class HandlerClass {
 	public Mono<ServerResponse> check(ServerRequest request) {
 		Flux<Long> interval = Flux.interval(Duration.ofSeconds(1));
         interval.subscribe((i) -> i.intValue());
-        Flux<String> f = Flux
-        	.fromStream(Stream.generate(() -> 
-        	"Price of Gold: $" +
-        	String.valueOf(Gold.getPrice()) +
-        	"\t When: "+ new Date()));
+        Service s= new Service();
+        Flux<String> fString= s.getStringFlux();
+        
         Mono<ServerResponse> response =
         	ServerResponse.ok().
         	contentType(MediaType.TEXT_EVENT_STREAM).
-        	body(Flux.zip(interval, f).
+        	body(Flux.zip(interval, fString).
         	map(Tuple2::getT2), String.class);
         return response; 
 		
