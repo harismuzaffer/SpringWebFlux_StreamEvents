@@ -12,8 +12,7 @@ public class Service {
 	    	.fromStream(Stream.generate(() -> 
 	    	"Price of Gold: $" +
 	    	String.valueOf(Gold.getPrice()) +
-	    	"\t When: "+ new Date()));
+	    	"\tWhen: "+ new Date()));
 	    return f;
 	}
-
 }
